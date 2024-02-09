@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'header' %}
+<nav class="navbar navbar-expand-lg" style="background-color: transparent;">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Infinite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"> Places</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"> Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"> Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block 'body' %}
+<div class="d-flex h-100 text-center index">
+    <div class="overlay"></div>
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column main-content justify-content-center text-white z-1">
+        <div class="px-3">
+            <h1>Welcome to Infinite</h1>
+            <p class="lead mb-5">where make impossibles possible !</p>
+            <div class="registeration">
+                <p class="lead">
+                    New member?
+                    <a href="{% url 'register' %}" style="color: burlywood;">Register</a>
+                </p>
+                <p class="lead">
+                    have an account?
+                    <a href="{% url 'login' %}" style="color: burlywood;">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
