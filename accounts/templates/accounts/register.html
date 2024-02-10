@@ -1,29 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
-
-{% block 'header' %}
-<nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}">Infinite</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-{% endblock %}
-
+{% block title %}register{% endblock %}
 {% block 'body' %}
-<h1 class="text-center mb-5">Register</h1>
-<div class="text-center">
-    <main class="form-signin">
-        <form action="" method="post">
+<div class="login-container">
+    <div class="blur-background"></div>
+    <div class="text-center d-flex flex-column justify-content-center text-center login-form">
+        <h1 class="text-center mb-5">Register</h1>
+        <form action="" method="post" class="d-flex flex-column align-items-center gap-3 w-100 m-auto text-white form-signin">
             {% csrf_token %}
             {{ register_form }}
-            <button class="w-100 btn bg-danger bg-gradient text-white" type="submit">Register</button>
-            <p class="mt-5 mb-3 text-muted">Copyright © 2024</p>
+            <button class="w-25 btn bg-dark bg-gradient text-white" type="submit">Register</button>
         </form>
-    </main>
+    </div>
 </div>
 {% endblock %}

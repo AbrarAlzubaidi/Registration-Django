@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import handler403, handler404
+from django.conf.urls import handler403, handler404, handler500
 
 handler403 = 'home.views.custom_permission_denied_403'
 handler404 = 'home.views.custom_permission_denied_404'
+handler500 = 'home.views.custom_permission_denied_500'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

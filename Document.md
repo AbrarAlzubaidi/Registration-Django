@@ -3,7 +3,7 @@
 ## framework, tools and languages
 
 - python as main programming language
-- django as framework
+- django as python backend framework
 - sqlite as database
 
 ## how to setup
