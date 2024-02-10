@@ -7,6 +7,7 @@
 - sqlite as database
 - mailgun as an email service
 - hashing algorithm: django build-in hash method that use Argon2 algorithm
+- migrations: django has build-in method to generate the migrations. to see them jump to the Hoe to use section point number 7 [here](/#L91).
 
 ## Project tree
 
@@ -88,6 +89,7 @@ before of any step you should have python installed in your device and for sure 
 - check the `.env.sample` for the environment variables that used. and add yours.
 - make sure to set `DEBUG = False`.
 - type this command to reflect the classes (entities) to the local database `python manage.py migrate`
+- collect static folder in case `python manage.py collectstatic`, then type yes if it asks.
 
 and now you are ready to test and play around the application.
 
@@ -128,9 +130,9 @@ their are variety of endpoints for each app:
   - `/login`: for logging in the users in the application if the user is already have an account.
   - `/register`: for register the users in the application and create an account for them.
   - `/logout`: to logout the user from the application
-  - `password-reset/`: to reset the password if the user forget it, by display a page to make the user enter the email.
+  - `/password-reset/`: to reset the password if the user forget it, by display a page to make the user enter the email.
   - `/password-reset/confirm/<uidb64>/<token>/`: to confirm if the user is the authenticated user to change his/her password, by send an email, and it will display a page to make the user add new password and confirm it.
-  - `/password-reset-done`: to display for the user that the email was sent and check your email.
+  - `/password-reset-done`: to display for the user that the link was sent and check your email.
 
 - home app endpoints [here](./home/urls.py):
 
@@ -139,12 +141,12 @@ their are variety of endpoints for each app:
 
 - project endpoint
 
-  - `/admin`: this to login in to the dashboard as admin/user, what you will do inside it it will determine with the role you have. what i mean if you have admin role that means you can do anything and see all the tables without any privilege.
+  - `/admin`: this to login in to the dashboard as admin/user, what you will do inside it, it will be determined with the role you have. what i mean if you have admin role that means you can do anything and see all the tables without any privilege.
   - if you want to enter the dashboard as an admin, type `python manage.py createsuperuser` and fill your data, then try to login in with your admin credential.
 
 ## Views
 
-their are variety of endpoints for each app:
+their are variety of views for each app:
 
 - account app views [here](./accounts/views.py):
 
@@ -157,7 +159,7 @@ their are variety of endpoints for each app:
 
 - home app views [here](./home/views.py):
 
-  - `index_view`: to display the index page for all users.
+  - `index_view`: to display the main page for all users.
   - `home_page_view`: to display the home page for authenticated user only.
   - `custom_permission_denied_403`: to display for the user 403 page if 403 error request happen. (if unauthorized request happen)
   - `custom_permission_denied_404`: to display for the user 404 page if 404 error request happen. (page not found)
@@ -165,7 +167,7 @@ their are variety of endpoints for each app:
 
 ## Templates
 
-all templates i used use jinja (template language).
+in all templates i use jinja (template language).
 
 - account app templates [here](./accounts/templates/)
   - `login.html`: login template have form for login (username and password)
@@ -188,6 +190,7 @@ only accounts app has forms, [here](./accounts/forms.py)
 
 - form for the user, for login and register.
 - user form `NewUserForm` for changing some constrains but mainly to add widgets into forms and some validation for each attribute. to make sure every thing is in the right way, and consider all the edge cases that might happen when user interact with the form.
+- form for the reset password `CustomPasswordResetForm` form to add widget for it.
 
 ## Tests
 
