@@ -7,7 +7,7 @@
 - sqlite as database
 - mailgun as an email service
 - hashing algorithm: django build-in hash method that use Argon2 algorithm
-- migrations: django has build-in method to generate the migrations. to see them jump to the Hoe to use section point number 7 [here](/#L91).
+- migrations: django has build-in method to generate the migrations. to see them jump to the Hoe to use section point number 7 [here](Document.md/#L91).
 
 ## Project tree
 
