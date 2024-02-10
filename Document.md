@@ -137,6 +137,11 @@ their are variety of endpoints for each app:
   - `/`: show the main page. all users can fetch it.
   - `/home`: this page for authenticated users only, that logged in.
 
+- project endpoint
+
+  - `/admin`: this to login in to the dashboard as admin/user, what you will do inside it it will determine with the role you have. what i mean if you have admin role that means you can do anything and see all the tables without any privilege.
+  - if you want to enter the dashboard as an admin, type `python manage.py createsuperuser` and fill your data, then try to login in with your admin credential.
+
 ## Views
 
 their are variety of endpoints for each app:
