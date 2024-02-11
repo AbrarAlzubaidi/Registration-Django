@@ -94,6 +94,10 @@ before of any step you should have python installed in your device and for sure 
 
 and now you are ready to test and play around the application.
 
+**important note** if you face any problem in installing the packages you can install it manually:
+
+`pip install django django-crispy-forms django-environ whitenoise`
+
 ## Entity/Entities
 
 CustomUser: a class hold the user data
