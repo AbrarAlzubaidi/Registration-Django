@@ -63,7 +63,7 @@ footer{
 
 .custom-footer{
     padding: 20px;
-}
+    }
 
 /* error message style */
 .alert-error{
@@ -80,7 +80,7 @@ footer{
 }
 .login-container {
     position: relative;
-}
+    }
 
 .blur-background {
     position: fixed;
@@ -96,6 +96,10 @@ footer{
 .login-form {
     position: relative; 
     z-index: 1; 
+}
+.form-signin input{
+    width: fit-content;
+    margin: auto;
 }
 .form-signin div ul{
     display: flex;

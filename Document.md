@@ -90,6 +90,7 @@ before of any step you should have python installed in your device and for sure 
 - make sure to set `DEBUG = False`.
 - type this command to reflect the classes (entities) to the local database `python manage.py migrate`
 - collect static folder in case `python manage.py collectstatic`, then type yes if it asks.
+- run `python manage.py runserver` to run the server locally.
 
 and now you are ready to test and play around the application.
 
